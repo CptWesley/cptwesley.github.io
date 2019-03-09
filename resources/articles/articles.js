@@ -15,6 +15,8 @@ function showArticles() {
 /**
  * Creates an article link element.
  * @param {HTMLElement} container Container to append to.
+ * @param {*} objects Objects in the json response of the github api.
+ * @param {Number} index Current index in the objects list.
  */
 function appendArticleLinkElement(container, objects, index) {
     const file = getFileNameWithoutExtension(objects[index].path);
@@ -38,6 +40,10 @@ function getFileNameWithoutExtension(path) {
     return path.split("/").pop().split(".")[0];
 }
 
+/**
+ * Reformats a date.
+ * @param {Date} date 
+ */
 function getDateFormat(date) {
     return date.getFullYear() + "/" + date.getMonth() + "/" + date.getDay();
 }
