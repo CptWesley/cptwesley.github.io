@@ -13,3 +13,14 @@ function request(url, callback) {
     };
     request.send();
 }
+
+/**
+ * Performs an asynchronous web request which parses the result to an object.
+ * @param {string} url URL to get the resource from.
+ * @param {function} callback Callback to use after having retrieved the resource.
+ */
+function requestObject(url, callback) {
+    request(url, function(content) {
+        callback(JSON.parse(content));
+    });
+}

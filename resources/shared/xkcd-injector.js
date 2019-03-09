@@ -3,11 +3,9 @@
  * @param {HTMLElement} parent The element to append the xkcd with.
  */
 function injectRandomXkcd(parent) {
-    request("https://xkcd.now.sh/", function(newestContent){
-        const newest = JSON.parse(newestContent);
+    requestObject("https://xkcd.now.sh/", function(newest){
         const number = Math.floor(Math.random() * newest.num) + 1;
-        request("https://xkcd.now.sh/" + number, function(content) {
-            const selected = JSON.parse(content);
+        requestObject("https://xkcd.now.sh/" + number, function(selected) {
             const imageElement = document.createElement("img");
             imageElement.setAttribute("src", selected.img);
             imageElement.setAttribute("class", "mx-auto d-block img-fluid");
