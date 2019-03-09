@@ -9,6 +9,9 @@ function loadPage(path = "", query = "", hash = "", push = true) {
     if (path === "/") {
         renderHtml("resources/index/index.html");
     }
+    else if (path === "/articles") {
+        showArticles();
+    }
     else {
         pageNotFound(path, query, hash);
     }

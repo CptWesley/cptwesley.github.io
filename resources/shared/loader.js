@@ -5,6 +5,7 @@ loadStyle("resources/shared/style.css");
 //loadScript("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js");
 loadScript("resources/shared/requests.js");
 loadScript("resources/shared/xkcd-injector.js");
+loadScript("resources/articles/articles.js");
 loadScript("resources/shared/resolver.js");
 loadScript("resources/shared/states.js");
 loadScript("resources/shared/main.js");
