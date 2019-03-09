@@ -6,7 +6,12 @@
  * @param {boolean} push Determines whether or not a new state is pushed.
  */
 function loadPage(path = "", query = "", hash = "", push = true) {
-    pageNotFound(path, query, hash);
+    if (path === "/") {
+        renderHtml("resources/index/index.html");
+    }
+    else {
+        pageNotFound(path, query, hash);
+    }
 
     if (push) {
         pushState(path, query, hash);
@@ -35,4 +40,15 @@ function pageNotFound(path = "", query = "", hash = "") {
     `;
     const container = document.getElementById("xkcd-container");
     injectRandomXkcd(container);
+}
+
+/**
+ * Renders a simple HTML page content at the given url.
+ * @param {string} url Address of the HTML content to render. 
+ */
+function renderHtml(url) {
+    request(url, function(content) {
+        const page = document.getElementById("page");
+        page.innerHTML = content;
+    });
 }
