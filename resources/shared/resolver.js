@@ -1,14 +1,4 @@
 /**
- * Pushes the state of a certain page.
- * @param {string} path The path to the page to push.
- * @param {string} query The query of the page to push.
- * @param {string} hash The hash of the page to push.
- */
-function pushState(path, query, hash) {
-    window.history.pushState({path: path, query: query, hash: hash}, "", path + query + hash);
-}
-
-/**
  * Loads a certain page.
  * @param {string} path The path to the page to load.
  * @param {string} query The query of the page to load.
