@@ -21,9 +21,10 @@ function appendArticleLinkElement(container, objects, index) {
     requestObject("/resources/articles/entries/" + file + ".json", function(article) {
         const item = document.createElement("a");
         item.setAttribute("href", "javascript:loadPage('/articles/" + file + "');");
-        item.innerText = article.date + " - " + article.title;
+        const date = new Date(Date.parse(article.date));
+        item.innerText = getDateFormat(date) + " - " + article.title;
         container.appendChild(item);
-        if (index < objects.length) {
+        if (index < objects.length - 1) {
             appendArticleLinkElement(container, objects, index + 1);
         }
     });
@@ -35,4 +36,8 @@ function appendArticleLinkElement(container, objects, index) {
  */
 function getFileNameWithoutExtension(path) {
     return path.split("/").pop().split(".")[0];
+}
+
+function getDateFormat(date) {
+    return date.getFullYear() + "/" + date.getMonth() + "/" + date.getDay();
 }
