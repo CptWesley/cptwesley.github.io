@@ -2,3 +2,10 @@
     list-style-type: none;
     padding-left: 0%;
 }
+
+.article-date {
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 130%;
+    opacity: 0.65;
+}
