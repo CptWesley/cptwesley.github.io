@@ -5,5 +5,11 @@
         window.onpopstate = popState;
         loadPage(window.location.pathname, window.location.search, window.location.hash, false);
         replaceState(window.location.pathname, window.location.search, window.location.hash);
+        
+        window.onresize = function() {
+            const nav = document.getElementById("navigation");
+            body.style.paddingTop = (nav.clientHeight + 10) + "px";
+        };
+        window.onresize();
     })
 })();
