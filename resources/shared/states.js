@@ -11,8 +11,8 @@ function pushState(path, query, hash) {
 /**
  * Replaces the state of the current page.
  * @param {string} path The path to the page to replace with.
- * @param {string} query The query of the page replace with.
- * @param {string} hash The hash of the page replace with.
+ * @param {string} query The query of the page to replace with.
+ * @param {string} hash The hash of the page to replace with.
  */
 function replaceState(path, query, hash) {
     window.history.replaceState({path: path, query: query, hash: hash}, "", path + query + hash);
