@@ -56,9 +56,16 @@ function getDateFormat(date) {
     return date.getFullYear() + "/" + date.getMonth() + "/" + date.getDay();
 }
 
+/**
+ * Shows the article with the given name.
+ * @param {string} name Name of the article to show.
+ */
 function showArticle(name) {
-    requestObject("/resources/articles/entries/" + name + ".json", function(object) {
-        
+    requestObject("/resources/articles/entries/" + name + ".json", function(map) {
+        request("/resources/articles/article-template.html", function(template) {
+            document.getElementById("page").innerHTML = fillTemplate(template, map);
+        });
+        document.title = map.title;
     }, function() {
         articleNotFound(name);
     });
