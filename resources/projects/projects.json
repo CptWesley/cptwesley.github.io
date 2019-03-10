@@ -1,0 +1,16 @@
+[
+    {
+        "title": "AssertNet",
+        "img": "https://raw.githubusercontent.com/CptWesley/AssertNet/master/logo.png",
+        "desc": "AssertJ style fluent assertions for .NET Standard testing frameworks: xUnit, NUnit and MSTest and mocking framework Moq.",
+        "lang": "C#",
+        "url": "https://github.com/CptWesley/AssertNet"
+    },
+    {
+        "title": "ExtensionNet",
+        "img": "",
+        "desc": "Class extension collections for .NET Standard",
+        "lang": "C#",
+        "url": "https://github.com/CptWesley/ExtensionNet"
+    }
+]

@@ -3,9 +3,11 @@ loadStyle("/resources/shared/style.css");
 
 //loadScript("https://code.jquery.com/jquery-3.3.1.slim.min.js");
 //loadScript("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js");
+loadScript("/resources/shared/templates.js");
 loadScript("/resources/shared/requests.js");
 loadScript("/resources/shared/xkcd-injector.js");
 loadScript("/resources/articles/articles.js");
+loadScript("/resources/projects/projects.js");
 loadScript("/resources/shared/resolver.js");
 loadScript("/resources/shared/states.js");
 loadScript("/resources/shared/main.js");

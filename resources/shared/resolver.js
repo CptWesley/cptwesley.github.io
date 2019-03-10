@@ -10,6 +10,9 @@ function loadPage(path = "", query = "", hash = "", push = true) {
         case "":
             renderHtml("/resources/index/index.html", "About Me");
             break;
+        case "/projects":
+            showProjects();
+            break;
         case "/articles":
             showArticles();
             break;
