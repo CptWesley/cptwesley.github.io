@@ -6,14 +6,16 @@
  * @param {boolean} push Determines whether or not a new state is pushed.
  */
 function loadPage(path = "", query = "", hash = "", push = true) {
-    if (path === "/") {
-        renderHtml("/resources/index/index.html", "About Me");
-    }
-    else if (path === "/articles") {
-        showArticles();
-    }
-    else {
-        pageNotFound(path, query, hash);
+    switch (sanitizePath(path)) {
+        case "":
+            renderHtml("/resources/index/index.html", "About Me");
+            break;
+        case "/articles":
+            showArticles();
+            break;
+        default:
+            pageNotFound(path, query, hash);
+            break;
     }
 
     if (push) {
@@ -57,4 +59,12 @@ function renderHtml(url, title = "CptWesley's Website") {
         page.innerHTML = content;
         document.title = title;
     });
+}
+
+/**
+ * Sanitizes a path part of a url.
+ * @param {string} path Path to sanitize.
+ */
+function sanitizePath(path) {
+    return path.replace(/\/$/, "");
 }
