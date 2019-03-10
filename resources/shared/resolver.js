@@ -14,7 +14,7 @@ function loadPage(path = "", query = "", hash = "", push = true) {
             showProjects();
             break;
         case "/articles":
-            showArticles();
+            showArticles(parseQuery(query));
             break;
         default:
             pageNotFound(path, query, hash);
@@ -70,4 +70,17 @@ function renderHtml(url, title = "CptWesley's Website") {
  */
 function sanitizePath(path) {
     return path.replace(/\/$/, "");
+}
+
+/**
+ * Parses a query to a map.
+ * @param {string} query Query to parse.
+ */
+function parseQuery(query) {
+    const result = {};
+    for (let element of query.substring(1).split("&")) {
+        const parts = element.split("=");
+        result[parts[0]] = parts[1];
+    }
+    return result;
 }
