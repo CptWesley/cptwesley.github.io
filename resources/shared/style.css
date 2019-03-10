@@ -1,3 +1,8 @@
 body {
     padding-top: 5rem;
 }
+
+.list-none {
+    list-style-type: none;
+    padding-left: 0%;
+}
