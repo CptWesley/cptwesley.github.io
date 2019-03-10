@@ -1,9 +1,10 @@
 loadStyle("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
+loadStyle("/resources/thirdparty/prism.css");
 loadStyle("/resources/shared/style.css");
 
-//loadScript("https://code.jquery.com/jquery-3.3.1.slim.min.js");
-//loadScript("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js");
+loadScript("/resources/thirdparty/prism.js");
 loadScript("/resources/shared/templates.js");
+loadScript("/resources/shared/markdown-parser.js");
 loadScript("/resources/shared/requests.js");
 loadScript("/resources/shared/xkcd-injector.js");
 loadScript("/resources/articles/articles.js");

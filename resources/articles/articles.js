@@ -64,6 +64,7 @@ function showArticle(name) {
     requestObject("/resources/articles/entries/" + name + ".json", function(map) {
         request("/resources/articles/article-template.html", function(template) {
             document.getElementById("page").innerHTML = fillTemplate(template, map);
+            Prism.highlightAll();
         });
         document.title = map.title;
     }, function() {
