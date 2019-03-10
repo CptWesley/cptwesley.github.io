@@ -7,7 +7,7 @@
  */
 function loadPage(path = "", query = "", hash = "", push = true) {
     if (path === "/") {
-        renderHtml("/resources/index/index.html");
+        renderHtml("/resources/index/index.html", "About Me");
     }
     else if (path === "/articles") {
         showArticles();
@@ -43,15 +43,18 @@ function pageNotFound(path = "", query = "", hash = "") {
     `;
     const container = document.getElementById("xkcd-container");
     injectRandomXkcd(container);
+    document.title = "Page not found";
 }
 
 /**
  * Renders a simple HTML page content at the given url.
- * @param {string} url Address of the HTML content to render. 
+ * @param {string} url Address of the HTML content to render.
+ * @param {string} title Title of the page to load.
  */
-function renderHtml(url) {
+function renderHtml(url, title = "CptWesley's Website") {
     request(url, function(content) {
         const page = document.getElementById("page");
         page.innerHTML = content;
+        document.title = title;
     });
 }

@@ -10,6 +10,7 @@ function showArticles() {
         const container = document.getElementById("articles-list-container");
         appendArticleLinkElement(container, objects, 0);
     });
+    document.title = "Blogs";
 }
 
 /**
