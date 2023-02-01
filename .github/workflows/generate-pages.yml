@@ -42,7 +42,6 @@ jobs:
           git rm ./.gitignore
           git rm -r *
           cp -a ./app/.output/public/. ./
-          ln -s ./index.html ./404.html
           rm -r ./app/
 
       - name: Push webpage
