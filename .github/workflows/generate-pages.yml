@@ -38,8 +38,12 @@ jobs:
 
       - name: Prepare directory
         run: |
-          cp -a ./app/.output/. ./
+          git rm -r ./.github/
+          git rm ./.gitignore
+          git rm -r *
+          cp -a ./app/.output/public/. ./
           ln -s ./index.html ./404.html
+          rm -r ./app/
 
       - name: Push webpage
         run: |
