@@ -26,19 +26,19 @@ jobs:
         with:
           node-version: 18
           cache: 'yarn'
-          cache-dependency-path: ./yarn.lock
+          cache-dependency-path: ./app/yarn.lock
 
       - name: Install dependencies
         run: yarn install
-        working-directory: ./
+        working-directory: ./app
 
       - name: Build
-        run: yarn build
-        working-directory: ./
+        run: yarn generate
+        working-directory: ./app
 
       - name: Prepare directory
         run: |
-          cp -a ./dist/. ./
+          cp -a ./app/.output/. ./
           ln -s ./index.html ./404.html
 
       - name: Push webpage
