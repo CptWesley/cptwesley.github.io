@@ -28,7 +28,7 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./app
+        working-directory: ./
 
       - name: Build
         run: npm run build
@@ -36,12 +36,8 @@ jobs:
 
       - name: Prepare directory
         run: |
-          git rm -r ./.github/
-          git rm ./.gitignore
-          git rm -r *
           cp -a ./dist/. ./
           ln -s ./index.html ./404.html
-          rm -r ./app/
 
       - name: Push webpage
         run: |
