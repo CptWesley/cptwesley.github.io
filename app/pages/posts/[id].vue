@@ -1,17 +1,31 @@
 <template>
-  <div v-if="markdown">
-    <ContentRenderer :value="markdown" />
+  <div>
+    <Head>
+      <Title>{{ title }}</Title>
+      <Meta name="description" :content="description" />
+    </Head>
+    <div v-if="markdown">
+      <ContentRenderer :value="markdown" />
+    </div>
+    <div v-else>NOT FOUND</div>
   </div>
-  <div v-else>NOT FOUND</div>
 </template>
 
 <script setup lang="ts">
 import { useRoute } from "#app";
-import { ParsedContent } from "@nuxt/content/dist/runtime/types";
 
 const route = useRoute();
 const id = route.params.id;
 const found = await queryContent(`posts/${id}`).find();
-const markdown: ParsedContent | undefined =
-  found.length > 0 ? found[0] : undefined;
+const markdown = found.length > 0 ? found[0] : undefined;
+
+if (!markdown) {
+  throw createError({
+    statusCode: 404,
+    fatal: true,
+  });
+}
+
+const title = markdown?.title ?? id;
+const description = markdown?.description ?? id;
 </script>
