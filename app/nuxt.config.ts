@@ -1,3 +1,6 @@
+import fs from "fs";
+import path from "path";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: ["@nuxt/content"],
@@ -13,9 +16,12 @@ export default defineNuxtConfig({
       if (nitroConfig.dev || !nitroConfig.prerender?.routes) {
         return;
       }
-      // ..Async logic..
-      nitroConfig.prerender.routes.push("/posts/1");
-      nitroConfig.prerender.routes.push("/posts/3");
+
+      const posts = fs.readdirSync("./content/posts");
+      posts.forEach((post) => {
+        const route = `/posts/${path.parse(post).name}`;
+        nitroConfig.prerender?.routes?.push(route);
+      });
     },
   },
 });

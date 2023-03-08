@@ -1,9 +1,5 @@
 <template>
-  <div>
-    <ContentRenderer :value="data" />
-  </div>
+  <div>Hello World!</div>
 </template>
 
-<script setup lang="ts">
-const data = await queryContent("/helloworld").findOne();
-</script>
+<script setup lang="ts"></script>
