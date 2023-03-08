@@ -1,5 +1,4 @@
-/* eslint-env node */
-require("@rushstack/eslint-patch/modern-module-resolution");
+// .eslintrc.cjs
 
 module.exports = {
   root: true,
@@ -7,20 +6,18 @@ module.exports = {
     browser: true,
     node: true,
   },
-  extends: [
-    "plugin:vue/vue3-essential",
-    "eslint:recommended",
-    "@vue/eslint-config-typescript",
-    "@vue/eslint-config-prettier",
-    "plugin:nuxt/recommended",
-    "plugin:prettier/recommended",
-  ],
+  parser: "vue-eslint-parser",
   parserOptions: {
-    ecmaVersion: "latest",
+    parser: "@typescript-eslint/parser",
   },
+  extends: ["@nuxtjs/eslint-config-typescript", "plugin:prettier/recommended"],
+  plugins: [],
   rules: {
-    "vue/multi-word-component-names": "off",
-    "vue/no-multiple-template-root": "off",
-    "@typescript-eslint/no-unused-vars": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+      },
+    ],
   },
 };

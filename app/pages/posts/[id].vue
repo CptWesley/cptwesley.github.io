@@ -1,4 +1,6 @@
-<template>Post {{ id }}</template>
+<template>
+  <div>Post {{ id }}</div>
+</template>
 
 <script setup>
 import { useRoute } from "#app";

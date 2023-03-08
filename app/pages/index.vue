@@ -1,10 +1,9 @@
 <template>
-  <div>this is the index!</div>
-  <ContentRenderer :value="data" />
+  <div>
+    <ContentRenderer :value="data" />
+  </div>
 </template>
 
 <script setup lang="ts">
-const { data } = await useAsyncData("hello", () =>
-  queryContent("/helloworld").findOne()
-);
+const data = await queryContent("/helloworld").findOne();
 </script>

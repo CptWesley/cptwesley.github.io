@@ -1,4 +1,5 @@
 # Hello
+
 world
 
 ```csharp
@@ -7,8 +8,8 @@ public static void Main(string[] args) {
 }
 ```
 
- ```js [src/index.js] {1, 2-3}
-  const a = 4;
-  const b = a + 3;
-  const c  = a * b;
-  ```
+```js [src/index.js] {1, 2-3}
+const a = 4;
+const b = a + 3;
+const c = a * b;
+```
