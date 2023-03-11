@@ -1,31 +1,28 @@
 <template>
   <div>
-    <Head>
-      <Title>{{ title }}</Title>
-      <Meta name="description" :content="description" />
+    <Head v-if="post">
+      <Title>{{ post.title }}</Title>
+      <Meta name="description" :content="post.description" />
     </Head>
-    <div v-if="markdown">
-      <ContentRenderer :value="markdown" />
+    <div v-if="post">
+      <ContentRenderer :value="post" />
     </div>
-    <div v-else>NOT FOUND</div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useRoute } from "#app";
+import { getPost } from "~~/utility/content";
+import { isString } from "~~/utility/validation";
 
 const route = useRoute();
-const id = route.params.id;
-const found = await queryContent(`post/${id}`).find();
-const markdown = found.length > 0 ? found[0] : undefined;
+const id = isString(route.params.id);
+const post = await getPost(id);
 
-if (!markdown) {
+if (!post) {
   throw createError({
-    statusCode: 404,
+    statusCode: 500,
     fatal: true,
   });
 }
-
-const title = markdown?.title ?? id;
-const description = markdown?.description ?? id;
 </script>
