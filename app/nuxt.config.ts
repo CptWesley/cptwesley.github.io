@@ -34,4 +34,7 @@ export default defineNuxtConfig({
       pushContent("author");
     },
   },
+  app: {
+    pageTransition: { name: "page", mode: "out-in" },
+  },
 });
