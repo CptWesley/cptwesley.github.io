@@ -15,7 +15,7 @@ export interface IPost extends IContent {
   keywords?: string[];
 }
 
-export async function getContent(path: string | undefined): Promise<IContent | undefined> {
+export async function getContent(path: string | string[] | undefined): Promise<IContent | undefined> {
   path = isString(path);
   if (path === undefined) {
     return undefined;
@@ -33,7 +33,7 @@ export async function getContent(path: string | undefined): Promise<IContent | u
   };
 }
 
-export async function getPost(id: string | undefined): Promise<IPost | undefined> {
+export async function getPost(id: string | string[] | undefined): Promise<IPost | undefined> {
   id = isString(id);
   if (id === undefined) {
     return undefined;

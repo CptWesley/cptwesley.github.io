@@ -5,7 +5,7 @@
       <Meta name="description" :content="post.description" />
     </Head>
     <div v-if="post">
-      <ContentRenderer :value="post" />
+      <ContentRenderer :value="post.body" />
     </div>
   </div>
 </template>
@@ -13,15 +13,13 @@
 <script setup lang="ts">
 import { useRoute } from "#app";
 import { getPost } from "~~/utility/content";
-import { isString } from "~~/utility/validation";
 
 const route = useRoute();
-const id = isString(route.params.id);
-const post = await getPost(id);
+const post = await getPost(route.params.id);
 
 if (!post) {
   throw createError({
-    statusCode: 500,
+    statusCode: 404,
     fatal: true,
   });
 }
