@@ -13,3 +13,5 @@ interface IProps {
 
 defineProps<IProps>();
 </script>
+
+<style></style>

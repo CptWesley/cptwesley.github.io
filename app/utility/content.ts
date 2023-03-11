@@ -1,6 +1,6 @@
 import { ParsedContent } from "@nuxt/content/dist/runtime/types";
 import { trimSlashes } from "~~/utility/pathHelpers";
-import { isString } from "~~/utility/validation";
+import { isDate, isString } from "~~/utility/validation";
 
 export interface IContent {
   title: string;
@@ -10,6 +10,7 @@ export interface IContent {
 }
 
 export interface IPost extends IContent {
+  date?: Date;
   category?: string;
   author?: string;
   series?: string;
@@ -89,6 +90,7 @@ function upgradeToPost(content: IContent | undefined): IPost | undefined {
   post.category = isString(post.body.category);
   post.author = isString(post.body.author);
   post.series = isString(post.body.series);
+  post.date = isDate(post.body.date);
   return post;
 }
 
@@ -101,8 +103,14 @@ export function getPost(id: string | string[] | undefined): Promise<IPost | unde
   return getContentExact(`post/${id}`).then(upgradeToPost);
 }
 
+function sortPost(a: IPost, b: IPost): number {
+  const ai = a.date?.getTime() ?? 0;
+  const bi = b.date?.getTime() ?? 0;
+  return ai - bi;
+}
+
 export function getPosts(options: IContentSearchOptions | undefined = undefined): Promise<IPost[]> {
-  return getContent("post/", options).then((contents) => contents.map((content) => upgradeToPost(content)));
+  return getContent("post/", options).then((contents) => contents.map((content) => upgradeToPost(content)).sort(sortPost));
 }
 
 export function getAuthor(id: string | string[] | undefined): Promise<IAuthor | undefined> {

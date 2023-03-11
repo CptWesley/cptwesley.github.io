@@ -1,5 +1,6 @@
 <template>
-  <div v-for="post in posts" :key="post.path">
+  <div v-for="(post, index) in posts" :key="post.path">
+    <v-divider v-if="index > 0" />
     <PostListing :post="post" />
   </div>
 </template>
