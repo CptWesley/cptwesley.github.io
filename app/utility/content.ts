@@ -51,7 +51,7 @@ export function getContent(path: string | string[] | undefined, options: IConten
 
   return query.find().then((found) => {
     return found.map((parsed) => {
-      const realPath = trimSlashes(parsed._path) ?? "";
+      const realPath = `/${trimSlashes(parsed._path) ?? sanitizedPath}`;
 
       return {
         title: isString(parsed?.title, realPath),

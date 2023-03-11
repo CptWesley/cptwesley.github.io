@@ -4,12 +4,16 @@
       <Title>{{ author.title }}</Title>
       <Meta name="description" :content="author.description" />
     </Head>
-    <div v-if="author">
-      <ContentRenderer :value="author.body" />
-    </div>
-    <div v-for="post in posts" :key="post.path">
-      <div>{{ post.title }}</div>
-    </div>
+    <PageBody>
+      <template v-if="author" #center>
+        <ContentRenderer :value="author.body" />
+      </template>
+
+      <template v-if="author" #bcenter>
+        <h1>Posts</h1>
+        <PostListings :posts="posts" />
+      </template>
+    </PageBody>
   </div>
 </template>
 

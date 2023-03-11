@@ -4,9 +4,13 @@
       <Title>{{ post.title }}</Title>
       <Meta name="description" :content="post.description" />
     </Head>
-    <div v-if="post">
-      <ContentRenderer :value="post.body" />
-    </div>
+    <PageBody>
+      <template #center>
+        <div v-if="post">
+          <ContentRenderer :value="post.body" />
+        </div>
+      </template>
+    </PageBody>
   </div>
 </template>
 
