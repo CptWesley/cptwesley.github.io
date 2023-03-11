@@ -1,10 +1,12 @@
 <template>
-  <div>
-    <Head>
-      <Title>{{ statusCode }} - {{ fullMessage }}</Title>
-    </Head>
-    <div>Kapot</div>
-  </div>
+  <NuxtLayout>
+    <div>
+      <Head>
+        <Title>{{ statusCode }} - {{ fullMessage }}</Title>
+      </Head>
+      <div>Kapot</div>
+    </div>
+  </NuxtLayout>
 </template>
 
 <script setup lang="ts">

@@ -12,6 +12,10 @@ export default defineNuxtConfig({
     typeCheck: true,
     strict: true,
   },
+  css: ["vuetify/lib/styles/main.sass", "@mdi/font/css/materialdesignicons.min.css"],
+  build: {
+    transpile: ["vuetify"],
+  },
   hooks: {
     "nitro:config"(nitroConfig) {
       if (nitroConfig.dev || !nitroConfig.prerender?.routes) {
