@@ -18,11 +18,16 @@ export default defineNuxtConfig({
         return;
       }
 
-      const posts = fs.readdirSync("./content/post");
-      posts.forEach((post) => {
-        const route = `/post/${path.parse(post).name}`;
-        nitroConfig.prerender?.routes?.push(route);
-      });
+      function pushContent(dir: string) {
+        const articles = fs.readdirSync(`./content/${dir}`);
+        articles.forEach((article) => {
+          const route = `/${dir}/${path.parse(article).name}`;
+          nitroConfig.prerender?.routes?.push(route);
+        });
+      }
+
+      pushContent("post");
+      pushContent("author");
     },
   },
 });

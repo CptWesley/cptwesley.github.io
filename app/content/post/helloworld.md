@@ -1,6 +1,7 @@
 ---
 title: "Hello World!"
 description: "meta description of the page"
+author: "cptwesley"
 ---
 
 # Hello
