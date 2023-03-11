@@ -1,11 +1,17 @@
 import { ParsedContent } from "@nuxt/content/dist/runtime/types";
-import { comparePaths } from "~~/utility/pathHelpers";
+import { trimSlashes } from "~~/utility/pathHelpers";
 import { isString } from "~~/utility/validation";
+
+export interface IContentSearchOptions {
+  exact?: boolean;
+  limit?: number;
+}
 
 export interface IContent {
   title: string;
   description: string;
   body: ParsedContent;
+  path: string;
 }
 
 export interface IPost extends IContent {
@@ -15,22 +21,48 @@ export interface IPost extends IContent {
   keywords?: string[];
 }
 
-export async function getContent(path: string | string[] | undefined): Promise<IContent | undefined> {
+export async function getContent(path: string | string[] | undefined, options: IContentSearchOptions | undefined = undefined): Promise<IContent[]> {
   path = isString(path);
   if (path === undefined) {
-    return undefined;
+    return [];
   }
-  const found = await queryContent(path).limit(1).find();
-  const parsed = found.length > 0 ? found[0] : undefined;
-  if (!parsed || !comparePaths(parsed._path, path)) {
+  const sanitizedPath = trimSlashes(path);
+
+  let query = queryContent(sanitizedPath);
+  if (options) {
+    if (options.exact) {
+      query = query.where({ _path: `/${sanitizedPath}` }).limit(1);
+    } else if (options.limit) {
+      query = query.limit(options.limit);
+    }
+  }
+
+  const found = await query.find();
+
+  return found.map((parsed) => {
+    const realPath = trimSlashes(parsed._path) ?? "";
+
+    return {
+      title: isString(parsed?.title, realPath),
+      description: isString(parsed?.description, realPath),
+      body: parsed,
+      path: realPath,
+    };
+  });
+}
+
+export async function getContentExact(path: string | string[] | undefined, options: IContentSearchOptions | undefined = undefined): Promise<IContent | undefined> {
+  const adjustedOptions: IContentSearchOptions = {
+    exact: true,
+    limit: options?.limit,
+  };
+
+  const results = await getContent(path, adjustedOptions);
+  if (results.length <= 0) {
     return undefined;
   }
 
-  return {
-    title: isString(parsed?.title, path),
-    description: isString(parsed?.description, path),
-    body: parsed,
-  };
+  return results[0];
 }
 
 export async function getPost(id: string | string[] | undefined): Promise<IPost | undefined> {
@@ -38,7 +70,7 @@ export async function getPost(id: string | string[] | undefined): Promise<IPost 
   if (id === undefined) {
     return undefined;
   }
-  const found: IPost | undefined = await getContent(`post/${id}`);
+  const found: IPost | undefined = await getContentExact(`post/${id}`);
   if (!found) {
     return undefined;
   }
