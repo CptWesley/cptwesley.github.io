@@ -17,9 +17,9 @@ export default defineNuxtConfig({
         return;
       }
 
-      const posts = fs.readdirSync("./content/posts");
+      const posts = fs.readdirSync("./content/post");
       posts.forEach((post) => {
-        const route = `/posts/${path.parse(post).name}`;
+        const route = `/post/${path.parse(post).name}`;
         nitroConfig.prerender?.routes?.push(route);
       });
     },

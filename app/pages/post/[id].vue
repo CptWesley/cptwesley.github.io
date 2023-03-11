@@ -16,7 +16,7 @@ import { useRoute } from "#app";
 
 const route = useRoute();
 const id = route.params.id;
-const found = await queryContent(`posts/${id}`).find();
+const found = await queryContent(`post/${id}`).find();
 const markdown = found.length > 0 ? found[0] : undefined;
 
 if (!markdown) {
