@@ -28,11 +28,3 @@
     </v-row>
   </v-container>
 </template>
-
-<style>
-.page-item {
-  padding: 1.2rem;
-}
-.col {
-}
-</style>
