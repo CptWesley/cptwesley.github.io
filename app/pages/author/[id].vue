@@ -6,6 +6,13 @@
     </Head>
     <PageBody>
       <template v-if="author" #center>
+        <v-container fluid>
+          <v-row align="center" justify="center">
+            <v-col class="d-flex flex-column align-center">
+              <AvatarCircle :url="author.avatar" :color="author.color" :letters="author.letters" size="128px" class="tw-not-prose" />
+            </v-col>
+          </v-row>
+        </v-container>
         <ContentRenderer :value="author.body" />
       </template>
 

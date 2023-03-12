@@ -7,6 +7,13 @@
   <v-spacer v-else></v-spacer>
 </template>
 
+<style>
+.page-item {
+  padding: 1.2rem;
+  width: inherit;
+}
+</style>
+
 <script setup lang="ts">
 import { useSlots } from "vue";
 
@@ -38,10 +45,3 @@ function hasContent(): boolean {
   return childCount !== 0;
 }
 </script>
-
-<style>
-.page-item {
-  padding: 1.2rem;
-  width: inherit;
-}
-</style>

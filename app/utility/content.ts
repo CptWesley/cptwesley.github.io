@@ -17,7 +17,11 @@ export interface IPost extends IContent {
   keywords?: string[];
 }
 
-export interface IAuthor extends IContent {}
+export interface IAuthor extends IContent {
+  avatar?: string;
+  color?: string;
+  letters?: string;
+}
 
 export interface IContentSearchOptions {
   exact?: boolean;
@@ -113,6 +117,20 @@ export function getPosts(options: IContentSearchOptions | undefined = undefined)
   return getContent("post/", options).then((contents) => contents.map((content) => upgradeToPost(content)).sort(sortPost));
 }
 
+function upgradeToAuthor(content: IContent): IAuthor;
+function upgradeToAuthor(content: undefined): undefined;
+function upgradeToAuthor<T extends IContent | undefined>(content: T): IContent | undefined;
+function upgradeToAuthor(content: IContent | undefined): IAuthor | undefined {
+  if (!content) {
+    return undefined;
+  }
+  const author: IAuthor = content;
+  author.avatar = isString(author.body.avatar);
+  author.color = isString(author.body.color);
+  author.letters = isString(author.body.letters);
+  return author;
+}
+
 export function getAuthor(id: string | string[] | undefined): Promise<IAuthor | undefined> {
   id = isString(id);
   if (id === undefined) {
@@ -120,5 +138,5 @@ export function getAuthor(id: string | string[] | undefined): Promise<IAuthor | 
   }
   id = id.trim();
 
-  return getContentExact(`author/${id}`);
+  return getContentExact(`author/${id}`).then(upgradeToAuthor);
 }
