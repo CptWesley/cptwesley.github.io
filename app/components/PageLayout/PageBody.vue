@@ -1,47 +1,30 @@
 <template>
-  <v-container>
+  <v-container fluid>
     <v-row>
-      <v-col v-if="$slots.left" cols="12" sm="2">
-        <v-sheet rounded="lg" class="page-item" min-height="10vh">
-          <slot name="left" />
-        </v-sheet>
-      </v-col>
-      <v-spacer v-else></v-spacer>
+      <PageItem :size="2" min-height="10vh">
+        <slot name="left" />
+      </PageItem>
 
-      <v-col cols="12" sm="8">
-        <v-sheet rounded="lg" class="page-item" min-height="70vh">
-          <slot name="center" />
-        </v-sheet>
-      </v-col>
+      <PageItem :size="8" min-height="70vh">
+        <slot name="center" />
+      </PageItem>
 
-      <v-col v-if="$slots.right" cols="12" sm="2">
-        <v-sheet rounded="lg" class="page-item" min-height="10vh">
-          <slot name="right" />
-        </v-sheet>
-      </v-col>
-      <v-spacer v-else></v-spacer>
+      <PageItem :size="2" min-height="10vh">
+        <slot name="right" />
+      </PageItem>
     </v-row>
     <v-row>
-      <v-col v-if="$slots.bleft" cols="12" sm="2">
-        <v-sheet rounded="lg" class="page-item" min-height="10vh">
-          <slot name="bleft" />
-        </v-sheet>
-      </v-col>
-      <v-spacer v-else></v-spacer>
+      <PageItem :size="2" min-height="10vh">
+        <slot name="bleft" />
+      </PageItem>
 
-      <v-col v-if="$slots.bcenter" cols="12" sm="8">
-        <v-sheet rounded="lg" class="page-item" min-height="10vh">
-          <slot name="bcenter" />
-        </v-sheet>
-      </v-col>
-      <v-spacer v-else></v-spacer>
+      <PageItem :size="8" min-height="10vh">
+        <slot name="bcenter" />
+      </PageItem>
 
-      <v-col v-if="$slots.bright" cols="12" sm="2">
-        <v-sheet rounded="lg" class="page-item" min-height="10vh">
-          <slot name="bright" />
-        </v-sheet>
-      </v-col>
-      <v-spacer v-else></v-spacer>
+      <PageItem :size="2" min-height="10vh">
+        <slot name="bright" />
+      </PageItem>
     </v-row>
   </v-container>
 </template>
@@ -49,5 +32,7 @@
 <style>
 .page-item {
   padding: 1.2rem;
+}
+.col {
 }
 </style>

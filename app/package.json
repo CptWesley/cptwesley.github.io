@@ -14,6 +14,8 @@
   "devDependencies": {
     "@nuxt/content": "^2.5.2",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@nuxtjs/tailwindcss": "^6.4.1",
+    "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^18.14.6",
     "@typescript-eslint/parser": "^5.54.1",
     "eslint": "^8.35.0",

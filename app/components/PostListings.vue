@@ -1,7 +1,6 @@
 <template>
-  <div v-for="(post, index) in posts" :key="post.path">
-    <v-divider v-if="index > 0" />
-    <PostListing :post="post" />
+  <div class="tw-grid tw-grid-cols-1 tw-divide-y">
+    <PostListing v-for="post in posts" :key="post.path" :post="post" />
   </div>
 </template>
 
