@@ -5,10 +5,11 @@
       <Meta name="description" :content="post.description" />
     </Head>
     <PageBody>
-      <template #center>
-        <div v-if="post">
-          <ContentRenderer :value="post.body" />
-        </div>
+      <template v-if="post" #center>
+        <ContentRenderer :value="post.body" />
+      </template>
+      <template v-if="author" #right>
+        <AuthorInfoPreview :author="author" />
       </template>
     </PageBody>
   </div>
@@ -16,10 +17,11 @@
 
 <script setup lang="ts">
 import { useRoute } from "#app";
-import { getPost } from "~~/utility/content";
+import { getAuthor, getPost } from "~~/utility/content";
 
 const route = useRoute();
 const post = await getPost(route.params.id);
+const author = await getAuthor(post?.author);
 
 if (!post) {
   throw createError({

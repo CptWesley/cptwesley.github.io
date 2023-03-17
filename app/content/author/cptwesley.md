@@ -1,9 +1,10 @@
 ---
-title: "Wesley Baartman"
 avatar: "https://avatars.githubusercontent.com/u/9980136"
 color: "red"
 letters: "WB"
 ---
+
+# Wesley Baartman
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate odio ut enim blandit. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Sit amet porttitor eget dolor morbi non arcu. Imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada. Tristique magna sit amet purus gravida. Feugiat nibh sed pulvinar proin gravida hendrerit lectus. Nisl rhoncus mattis rhoncus urna neque. Cursus risus at ultrices mi. Sapien eget mi proin sed. Massa id neque aliquam vestibulum morbi blandit cursus risus. Nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est. Mi tempus imperdiet nulla malesuada pellentesque elit eget gravida. Blandit cursus risus at ultrices. Mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc. Etiam tempor orci eu lobortis elementum. Egestas pretium aenean pharetra magna ac placerat vestibulum lectus mauris. Lobortis scelerisque fermentum dui faucibus in ornare quam. Nullam eget felis eget nunc lobortis mattis aliquam.
 

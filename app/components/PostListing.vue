@@ -1,8 +1,8 @@
 <template>
   <div class="listing">
     <NuxtLink :to="post.path">{{ post.title }}</NuxtLink>
-    <span class="author">- {{ author?.title }}</span>
-    <span class="date">{{ parseDate(post.date) }}</span>
+    <span class="author">{{ authorString }}</span>
+    <span class="date">{{ dateString }}</span>
   </div>
 </template>
 
@@ -17,13 +17,8 @@ const props = defineProps<IProps>();
 
 const author = await getAuthor(props.post.author);
 
-function parseDate(date: Date | undefined): string {
-  if (!date) {
-    return "";
-  }
-
-  return `${date.getDay()}-${date.getMonth()}-${date.getFullYear()}`;
-}
+const authorString = author ? `- ${author.title}` : "";
+const dateString = props.post.date ? `${props.post.date.getDay()}-${props.post.date.getMonth()}-${props.post.date.getFullYear()}` : "";
 </script>
 
 <style>
