@@ -2,11 +2,9 @@
   <v-app>
     <v-app-bar class="px-3" color="white" flat density="compact">
       <v-spacer></v-spacer>
-      <v-tabs grow color="grey-darken-2" :mandatory="false">
-        <v-tab v-for="link in links" :key="link.ref" :to="link.ref">
-          {{ link.name }}
-        </v-tab>
-      </v-tabs>
+      <v-btn v-for="link in links" :key="link.ref" :to="link.ref">
+        {{ link.name }}
+      </v-btn>
       <v-spacer></v-spacer>
     </v-app-bar>
 
@@ -35,6 +33,7 @@ const links: ILink[] = [
     name: "Posts",
     ref: "/posts",
   },
+  /*
   {
     name: "Categories",
     ref: "/categories",
@@ -43,5 +42,6 @@ const links: ILink[] = [
     name: "Authors",
     ref: "/authors",
   },
+  */
 ];
 </script>
