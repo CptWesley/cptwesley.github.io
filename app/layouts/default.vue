@@ -2,8 +2,8 @@
   <v-app>
     <v-app-bar class="px-3" color="white" flat density="compact">
       <v-spacer></v-spacer>
-      <v-tabs grow color="grey-darken-2">
-        <v-tab v-for="link in links" :key="link.ref" :to="link.ref" ripple>
+      <v-tabs grow color="grey-darken-2" :mandatory="false">
+        <v-tab v-for="link in links" :key="link.ref" :to="link.ref">
           {{ link.name }}
         </v-tab>
       </v-tabs>
