@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-container>
     <v-row align="center" justify="center">
       <v-col class="d-flex flex-column align-center">
         <AvatarCircle :url="author.avatar" :color="author.color" :letters="author.letters" size="128px" class="tw-not-prose" :to="author.path" />
