@@ -2,6 +2,9 @@
 avatar: "https://avatars.githubusercontent.com/u/9980136"
 color: "red"
 letters: "WB"
+github: "https://github.com/CptWesley"
+linkedin: "https://www.linkedin.com/in/wesleybaartman/"
+steam: "https://steamcommunity.com/id/cptwesley/"
 ---
 
 # Wesley Baartman

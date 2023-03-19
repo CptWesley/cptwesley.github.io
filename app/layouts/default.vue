@@ -21,7 +21,7 @@
         </v-container>
       </template>
       <template #append>
-        <IconButton size="32" src="/github.svg" to="https://github.com/CptWesley/cptwesley.github.io" />
+        <IconButton size="32" src="/github.svg" to="https://github.com/CptWesley/cptwesley.github.io" title="GitHub" />
       </template>
     </v-app-bar>
 

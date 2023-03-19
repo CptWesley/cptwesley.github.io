@@ -6,7 +6,9 @@ export default defineNuxtConfig({
   ssr: true,
   modules: ["@nuxt/content", "@nuxtjs/tailwindcss"],
   content: {
-    // https://content.nuxtjs.org/api/configuration
+    highlight: {
+      preload: ["diff", "json", "js", "ts", "css", "shell", "html", "md", "yaml", "csharp", "java", "haskell", "lua", "c", "cpp", "scala", "prolog"],
+    },
   },
   typescript: {
     typeCheck: true,

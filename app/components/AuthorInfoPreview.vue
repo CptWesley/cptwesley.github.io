@@ -1,11 +1,5 @@
 <template>
-  <v-container>
-    <v-row align="center" justify="center">
-      <v-col class="d-flex flex-column align-center">
-        <AvatarCircle :url="author.avatar" :color="author.color" :letters="author.letters" size="128px" class="tw-not-prose" :to="author.path" />
-      </v-col>
-    </v-row>
-  </v-container>
+  <AuthorInfoHeader :author="author" />
   <NuxtLink :to="author.path">
     <h3 class="name">{{ author.title }}</h3>
   </NuxtLink>

@@ -1,5 +1,7 @@
 <template>
-  <OptionalLink :to="to"><img class="logo-img" :width="size" :height="size" :src="src" /></OptionalLink>
+  <OptionalLink :to="to" class="tw-not-prose">
+    <img class="logo-img" :width="size" :height="size" :src="src" :title="title" :alt="title" />
+  </OptionalLink>
 </template>
 
 <script setup lang="ts">
@@ -7,6 +9,7 @@ interface IProps {
   to?: string;
   size?: number | string;
   src?: string;
+  title?: string;
 }
 
 defineProps<IProps>();

@@ -1,9 +1,11 @@
 <template>
-  <div class="listing">
-    <NuxtLink :to="post.path">{{ post.title }}</NuxtLink>
-    <span class="author">{{ authorString }}</span>
-    <span class="date">{{ dateString }}</span>
-  </div>
+  <span class="tw-not-prose">
+    <NuxtLink :to="post.path" class="listing">
+      <span>{{ post.title }}</span>
+      <span class="author">{{ authorString }}</span>
+      <span class="date">{{ dateString }}</span>
+    </NuxtLink>
+  </span>
 </template>
 
 <script setup lang="ts">
@@ -24,6 +26,9 @@ const dateString = props.post.date ? `${props.post.date.getDay()}-${props.post.d
 <style>
 .listing {
   display: flex;
+}
+.listing:hover {
+  filter: invert(0.3);
 }
 .author {
   display: inherit;

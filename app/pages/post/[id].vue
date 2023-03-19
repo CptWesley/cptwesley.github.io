@@ -8,9 +8,6 @@
       <template v-if="post" #center>
         <ContentRenderer :value="post.body" />
       </template>
-      <template v-if="author" #left>
-        <AuthorInfoPreview :author="author!" />
-      </template>
       <template v-if="author" #right>
         <AuthorInfoPreview :author="author!" />
       </template>

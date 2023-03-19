@@ -21,6 +21,9 @@ export interface IAuthor extends IContent {
   avatar?: string;
   color?: string;
   letters?: string;
+  github?: string;
+  linkedin?: string;
+  steam?: string;
 }
 
 export interface IContentSearchOptions {
@@ -128,6 +131,9 @@ function upgradeToAuthor(content: IContent | undefined): IAuthor | undefined {
   author.avatar = isString(author.body.avatar);
   author.color = isString(author.body.color);
   author.letters = isString(author.body.letters);
+  author.github = isString(author.body.github);
+  author.linkedin = isString(author.body.linkedin);
+  author.steam = isString(author.body.steam);
   return author;
 }
 
