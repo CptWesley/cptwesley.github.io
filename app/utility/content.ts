@@ -24,6 +24,8 @@ export interface IAuthor extends IContent {
   github?: string;
   linkedin?: string;
   steam?: string;
+  discord?: string;
+  nuget?: string;
 }
 
 export interface IContentSearchOptions {
@@ -135,6 +137,8 @@ function upgradeToAuthor(content: IContent | undefined): IAuthor | undefined {
   author.letters = isString(author.body.letters);
   author.github = isString(author.body.github);
   author.linkedin = isString(author.body.linkedin);
+  author.nuget = isString(author.body.nuget);
+  author.discord = isString(author.body.discord);
   author.steam = isString(author.body.steam);
   return author;
 }

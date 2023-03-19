@@ -3,7 +3,7 @@
   <NuxtLink :to="author.path">
     <h3 class="name">{{ author.title }}</h3>
   </NuxtLink>
-  <div class="text">{{ author.description }}</div>
+  <ContentRenderer class="text" :value="author.body" :excerpt="true" />
 </template>
 
 <script setup lang="ts">
@@ -12,7 +12,6 @@ import { IAuthor } from "~/utility/content";
 interface IProps {
   author: IAuthor;
 }
-
 defineProps<IProps>();
 </script>
 
@@ -21,6 +20,6 @@ defineProps<IProps>();
   margin-top: 0px;
 }
 .text {
-  font-size: medium;
+  font-size: small;
 }
 </style>

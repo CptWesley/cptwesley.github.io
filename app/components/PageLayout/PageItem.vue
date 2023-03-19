@@ -11,7 +11,6 @@
 import { useSlots } from "vue";
 
 interface IProps {
-  minHeight: string;
   xs?: number;
   sm?: number;
   md?: number;
@@ -47,6 +46,5 @@ function hasContent(): boolean {
 .page-item {
   padding: 1.2rem;
   width: inherit;
-  height: -webkit-fill-available;
 }
 </style>

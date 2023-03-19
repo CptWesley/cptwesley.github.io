@@ -7,6 +7,7 @@
     <PageBody>
       <template v-if="author" #center>
         <AuthorInfoHeader :author="author" :disable-link="true" />
+        <h1>{{ author.title }}</h1>
         <ContentRenderer :value="author.body" />
       </template>
 

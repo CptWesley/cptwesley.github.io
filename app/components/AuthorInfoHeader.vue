@@ -45,6 +45,20 @@ if (props.author.linkedin) {
     title: "LinkedIn",
   });
 }
+if (props.author.nuget) {
+  links.push({
+    src: "/nuget.svg",
+    to: props.author.nuget,
+    title: "NuGet",
+  });
+}
+if (props.author.discord) {
+  links.push({
+    src: "/discord.svg",
+    to: props.author.discord,
+    title: "Discord",
+  });
+}
 if (props.author.steam) {
   links.push({
     src: "/steam.svg",
