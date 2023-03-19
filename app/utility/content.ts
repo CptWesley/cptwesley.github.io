@@ -117,7 +117,7 @@ export function getPost(id: string | string[] | undefined): Promise<IPost | unde
 function sortPost(a: IPost, b: IPost): number {
   const ai = a.date?.getTime() ?? 0;
   const bi = b.date?.getTime() ?? 0;
-  return ai - bi;
+  return bi - ai;
 }
 
 export function getPosts(options: IContentSearchOptions | undefined = undefined): Promise<IPost[]> {
