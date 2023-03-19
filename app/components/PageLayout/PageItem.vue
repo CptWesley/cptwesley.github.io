@@ -1,5 +1,5 @@
 <template>
-  <v-col v-if="hasContent()" cols="12" :xs="size" :sm="size" :md="size" :lg="size" :xl="size" class="d-flex flex-column align-center">
+  <v-col v-if="hasContent()" cols="12" :xs="xs" :sm="sm" :md="md" :lg="lg" :xl="xl" class="d-flex flex-column align-center">
     <v-sheet rounded="lg" class="tw-prose tw-prose-lg page-item prose-a:tw-no-underline hover:prose-a:tw-underline" :min-height="minHeight">
       <slot />
     </v-sheet>
@@ -18,8 +18,12 @@
 import { useSlots } from "vue";
 
 interface IProps {
-  size: number;
   minHeight: string;
+  xs?: number;
+  sm?: number;
+  md?: number;
+  lg?: number;
+  xl?: number;
 }
 
 defineProps<IProps>();

@@ -1,30 +1,37 @@
 <template>
-  <v-container fluid>
+  <v-container fluid class="item-container">
     <v-row>
-      <PageItem :size="2" min-height="10vh">
+      <PageItemSide>
         <slot name="left" />
-      </PageItem>
+      </PageItemSide>
 
-      <PageItem :size="8" min-height="70vh">
+      <PageItemCenter>
         <slot name="center" />
-      </PageItem>
+      </PageItemCenter>
 
-      <PageItem :size="2" min-height="10vh">
+      <PageItemSide>
         <slot name="right" />
-      </PageItem>
+      </PageItemSide>
     </v-row>
     <v-row>
-      <PageItem :size="2" min-height="10vh">
+      <PageItemSide>
         <slot name="bleft" />
-      </PageItem>
+      </PageItemSide>
 
-      <PageItem :size="8" min-height="10vh">
+      <PageItemCenter>
         <slot name="bcenter" />
-      </PageItem>
+      </PageItemCenter>
 
-      <PageItem :size="2" min-height="10vh">
+      <PageItemSide>
         <slot name="bright" />
-      </PageItem>
+      </PageItemSide>
     </v-row>
   </v-container>
 </template>
+
+<style>
+.item-container {
+  padding-left: 4%;
+  padding-right: 4%;
+}
+</style>

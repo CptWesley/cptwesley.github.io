@@ -20,7 +20,7 @@ interface IProps {
   color?: string;
   letters?: string;
   size?: string | number;
-  to?: string | number;
+  to?: string;
 }
 
 defineProps<IProps>();

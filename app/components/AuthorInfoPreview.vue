@@ -7,9 +7,9 @@
     </v-row>
   </v-container>
   <NuxtLink :to="author.path">
-    <h2 class="name">{{ author.title }}</h2>
+    <h3 class="name">{{ author.title }}</h3>
   </NuxtLink>
-  <div>{{ author.description }}</div>
+  <div class="text">{{ author.description }}</div>
 </template>
 
 <script setup lang="ts">
@@ -25,5 +25,8 @@ defineProps<IProps>();
 <style>
 .name {
   margin-top: 0px;
+}
+.text {
+  font-size: medium;
 }
 </style>
