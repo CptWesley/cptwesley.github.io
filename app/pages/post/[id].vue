@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import { useRoute } from "#app";
-import { getAuthor, getPost } from "~~/utility/content";
+import { getAuthor, getPost } from "~/utility/content";
 
 const route = useRoute();
 const post = await getPost(route.params.id);

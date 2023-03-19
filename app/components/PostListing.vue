@@ -20,7 +20,7 @@ const props = defineProps<IProps>();
 const author = await getAuthor(props.post.author);
 
 const authorString = author ? `- ${author.title}` : "";
-const dateString = props.post.date ? `${props.post.date.getDay()}-${props.post.date.getMonth()}-${props.post.date.getFullYear()}` : "";
+const dateString = props.post.date?.toLocaleDateString() ?? "";
 </script>
 
 <style>

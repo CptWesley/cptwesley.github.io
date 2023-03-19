@@ -75,6 +75,8 @@ export function getContentExact(path: string | string[] | undefined, options: IC
   const adjustedOptions: IContentSearchOptions = {
     exact: true,
     limit: options?.limit,
+    author: options?.author,
+    series: options?.series,
   };
 
   return getContent(path, adjustedOptions).then((results) => {

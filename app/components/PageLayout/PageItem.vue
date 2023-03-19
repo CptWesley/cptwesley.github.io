@@ -1,18 +1,11 @@
 <template>
   <v-col v-if="hasContent()" cols="12" :xs="xs" :sm="sm" :md="md" :lg="lg" :xl="xl" class="d-flex flex-column align-center">
-    <v-sheet rounded="lg" class="tw-prose tw-prose-lg page-item prose-a:tw-no-underline hover:prose-a:tw-underline" :min-height="minHeight">
+    <v-sheet rounded="lg" class="tw-prose tw-prose-lg page-item prose-a:tw-no-underline hover:prose-a:tw-underline" min-height="10vh">
       <slot />
     </v-sheet>
   </v-col>
   <v-spacer v-else></v-spacer>
 </template>
-
-<style>
-.page-item {
-  padding: 1.2rem;
-  width: inherit;
-}
-</style>
 
 <script setup lang="ts">
 import { useSlots } from "vue";
@@ -45,7 +38,15 @@ function hasContent(): boolean {
   if (!children) {
     return false;
   }
-  const childCount = <number>children.length;
-  return childCount !== 0;
+
+  return children.length !== 0;
 }
 </script>
+
+<style>
+.page-item {
+  padding: 1.2rem;
+  width: inherit;
+  height: -webkit-fill-available;
+}
+</style>
