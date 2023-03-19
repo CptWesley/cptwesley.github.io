@@ -1,7 +1,7 @@
 <template>
   <OptionalLink :to="to">
     <v-avatar :color="color" :size="size" class="tw-not-prose">
-      <v-img v-if="url" :src="url" :alt="alt"></v-img>
+      <v-img v-if="url" :src="url" :alt="alt" />
       <span v-else class="text-h2">{{ letters }}</span>
     </v-avatar>
   </OptionalLink>
