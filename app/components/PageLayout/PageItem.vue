@@ -1,6 +1,6 @@
 <template>
   <v-col v-if="hasContent()" cols="12" :xs="xs" :sm="sm" :md="md" :lg="lg" :xl="xl" class="d-flex flex-column align-center">
-    <v-sheet rounded="lg" class="tw-prose tw-prose-lg page-item prose-a:tw-no-underline hover:prose-a:tw-underline" min-height="10vh">
+    <v-sheet rounded="lg" class="tw-prose tw-prose-lg page-item prose-a:tw-text-red-600 prose-a:tw-no-underline hover:prose-a:tw-underline" min-height="10vh">
       <slot />
     </v-sheet>
   </v-col>
