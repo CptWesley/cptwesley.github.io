@@ -1,11 +1,28 @@
 <template>
   <v-app>
-    <v-app-bar class="px-3" color="white" flat density="compact">
-      <v-spacer></v-spacer>
-      <v-btn v-for="link in links" :key="link.ref" :to="link.ref">
-        {{ link.name }}
-      </v-btn>
-      <v-spacer></v-spacer>
+    <!--
+    <v-app-bar class="px-3" color="white" density="comfortable">
+      <template #default>
+        <v-btn v-for="link in links" :key="link.ref" :to="link.ref">
+          {{ link.name }}
+        </v-btn>
+      </template>
+      <template #append>
+        <v-icon icon="mdi-vuetify" size="large" class="float-end" />
+      </template>
+    </v-app-bar>
+  -->
+    <v-app-bar class="navbar">
+      <template #default>
+        <v-container class="fill-height d-flex align-center">
+          <v-btn v-for="link in links" :key="link.ref" :to="link.ref" variant="text">
+            {{ link.name }}
+          </v-btn>
+        </v-container>
+      </template>
+      <template #append>
+        <IconButton size="32" src="/github.svg" to="https://github.com/CptWesley/cptwesley.github.io" />
+      </template>
     </v-app-bar>
 
     <v-main class="bg-grey-lighten-3">
@@ -45,3 +62,10 @@ const links: ILink[] = [
   */
 ];
 </script>
+
+<style>
+.navbar {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+</style>

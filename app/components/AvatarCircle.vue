@@ -1,16 +1,10 @@
 <template>
-  <NuxtLink v-if="to" :to="to">
+  <OptionalLink :to="to">
     <v-avatar :color="color" :size="size" class="tw-not-prose">
       <v-img v-if="url" :src="url" :alt="alt"></v-img>
       <span v-else class="text-h2">{{ letters }}</span>
     </v-avatar>
-  </NuxtLink>
-  <template v-else>
-    <v-avatar :color="color" :size="size" class="tw-not-prose">
-      <v-img v-if="url" :src="url" :alt="alt"></v-img>
-      <span v-else class="text-h2">{{ letters }}</span>
-    </v-avatar>
-  </template>
+  </OptionalLink>
 </template>
 
 <script setup lang="ts">
