@@ -1,1 +1,0 @@
-# CptWesley's Github Pages

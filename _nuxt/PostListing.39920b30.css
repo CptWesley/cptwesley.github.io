@@ -1,0 +1,1 @@
+.listing{display:flex}.listing:hover{filter:invert(.3)}.author{margin-left:1ch}.author,.date{align-items:center;color:gray;display:inherit;font-size:small}.date{margin-left:auto;margin-right:0}

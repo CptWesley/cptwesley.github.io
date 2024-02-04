@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html >
+<head><meta charset="utf-8">
+<title>Welcome</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css" id="vuetify-theme-stylesheet">.v-theme--light {
+      color-scheme: normal;
+      --v-theme-background: 255,255,255;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 255,255,255;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-variant: 66,66,66;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 238,238,238;
+      --v-theme-primary: 98,0,238;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 55,0,179;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 3,218,198;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 1,135,134;
+      --v-theme-secondary-darken-1-overlay-multiplier: 1;
+      --v-theme-error: 176,0,32;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 1;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 1;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 1;
+      --v-theme-on-background: 0,0,0;
+      --v-theme-on-surface: 0,0,0;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 0,0,0;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 0, 0, 0;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 0.87;
+      --v-medium-emphasis-opacity: 0.6;
+      --v-disabled-opacity: 0.38;
+      --v-idle-opacity: 0.04;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.12;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 33, 37, 41;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 245, 245, 245;
+      --v-theme-on-code: 0, 0, 0;
+    }
+    .v-theme--dark {
+      color-scheme: dark;
+      --v-theme-background: 18,18,18;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 33,33,33;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-variant: 189,189,189;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 66,66,66;
+      --v-theme-primary: 187,134,252;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 55,0,179;
+      --v-theme-primary-darken-1-overlay-multiplier: 1;
+      --v-theme-secondary: 3,218,197;
+      --v-theme-secondary-overlay-multiplier: 2;
+      --v-theme-secondary-darken-1: 3,218,197;
+      --v-theme-secondary-darken-1-overlay-multiplier: 2;
+      --v-theme-error: 207,102,121;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 2;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 2;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 2;
+      --v-theme-on-background: 255,255,255;
+      --v-theme-on-surface: 255,255,255;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 0,0,0;
+      --v-theme-on-secondary-darken-1: 0,0,0;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 255, 255, 255;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 0.87;
+      --v-medium-emphasis-opacity: 0.6;
+      --v-disabled-opacity: 0.38;
+      --v-idle-opacity: 0.1;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.16;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 33, 37, 41;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 52, 52, 52;
+      --v-theme-on-code: 204, 204, 204;
+    }
+    .bg-background {
+      --v-theme-overlay-multiplier: var(--v-theme-background-overlay-multiplier);
+      background: rgb(var(--v-theme-background)) !important;
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .bg-surface {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-overlay-multiplier);
+      background: rgb(var(--v-theme-surface)) !important;
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .bg-surface-variant {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-variant-overlay-multiplier);
+      background: rgb(var(--v-theme-surface-variant)) !important;
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .bg-primary {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-overlay-multiplier);
+      background: rgb(var(--v-theme-primary)) !important;
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .bg-primary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-darken-1-overlay-multiplier);
+      background: rgb(var(--v-theme-primary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .bg-secondary {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-overlay-multiplier);
+      background: rgb(var(--v-theme-secondary)) !important;
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .bg-secondary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-darken-1-overlay-multiplier);
+      background: rgb(var(--v-theme-secondary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .bg-error {
+      --v-theme-overlay-multiplier: var(--v-theme-error-overlay-multiplier);
+      background: rgb(var(--v-theme-error)) !important;
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .bg-info {
+      --v-theme-overlay-multiplier: var(--v-theme-info-overlay-multiplier);
+      background: rgb(var(--v-theme-info)) !important;
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .bg-success {
+      --v-theme-overlay-multiplier: var(--v-theme-success-overlay-multiplier);
+      background: rgb(var(--v-theme-success)) !important;
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .bg-warning {
+      --v-theme-overlay-multiplier: var(--v-theme-warning-overlay-multiplier);
+      background: rgb(var(--v-theme-warning)) !important;
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+    .text-background {
+      color: rgb(var(--v-theme-background)) !important;
+    }
+    .border-background {
+      --v-border-color: var(--v-theme-background);
+    }
+    .text-surface {
+      color: rgb(var(--v-theme-surface)) !important;
+    }
+    .border-surface {
+      --v-border-color: var(--v-theme-surface);
+    }
+    .text-surface-variant {
+      color: rgb(var(--v-theme-surface-variant)) !important;
+    }
+    .border-surface-variant {
+      --v-border-color: var(--v-theme-surface-variant);
+    }
+    .on-surface-variant {
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .text-primary {
+      color: rgb(var(--v-theme-primary)) !important;
+    }
+    .border-primary {
+      --v-border-color: var(--v-theme-primary);
+    }
+    .text-primary-darken-1 {
+      color: rgb(var(--v-theme-primary-darken-1)) !important;
+    }
+    .border-primary-darken-1 {
+      --v-border-color: var(--v-theme-primary-darken-1);
+    }
+    .text-secondary {
+      color: rgb(var(--v-theme-secondary)) !important;
+    }
+    .border-secondary {
+      --v-border-color: var(--v-theme-secondary);
+    }
+    .text-secondary-darken-1 {
+      color: rgb(var(--v-theme-secondary-darken-1)) !important;
+    }
+    .border-secondary-darken-1 {
+      --v-border-color: var(--v-theme-secondary-darken-1);
+    }
+    .text-error {
+      color: rgb(var(--v-theme-error)) !important;
+    }
+    .border-error {
+      --v-border-color: var(--v-theme-error);
+    }
+    .text-info {
+      color: rgb(var(--v-theme-info)) !important;
+    }
+    .border-info {
+      --v-border-color: var(--v-theme-info);
+    }
+    .text-success {
+      color: rgb(var(--v-theme-success)) !important;
+    }
+    .border-success {
+      --v-border-color: var(--v-theme-success);
+    }
+    .text-warning {
+      color: rgb(var(--v-theme-warning)) !important;
+    }
+    .border-warning {
+      --v-border-color: var(--v-theme-warning);
+    }
+    .on-background {
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .on-surface {
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .on-primary {
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .on-primary-darken-1 {
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .on-secondary {
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .on-secondary-darken-1 {
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .on-error {
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .on-info {
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .on-success {
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .on-warning {
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+</style>
+<meta name="description" content="meta description of the page"><link rel="modulepreload" href="/_payload.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/entry.563012a2.js"><link rel="preload" as="style" href="/_nuxt/entry.910402ef.css"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/default.a9c9ec91.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/IconButton.vue.3b4b8255.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/nuxt-link.d1ea61ae.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/index.2ee34804.js"><link rel="preload" as="style" href="/_nuxt/AuthorInfoPreview.6c100872.css"><link rel="preload" as="style" href="/_nuxt/IconButton.ef50f21d.css"><link rel="preload" as="style" href="/_nuxt/PostListing.39920b30.css"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/components.2a0f18af.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/composables.a6588b66.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/ContentRenderer.50b11898.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/ContentRendererMarkdown.fc0c475b.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/index.a6ef77ff.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/AuthorInfoPreview.vue.ba78c84e.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/AuthorInfoHeader.vue.405c114d.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/PostListings.vue.ef4a7a38.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/content.6e7b275f.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/validation.90937745.js"><link rel="preload" as="style" href="/_nuxt/validation.092c4196.css"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/query.6e942ed9.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/utils.b5e37301.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/ProseH1.34184ede.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/ProseP.5cf2cc9d.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/ProseA.65eadb21.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/ProseEm.0bcde0ed.js"><link rel="prefetch" as="script" crossorigin href="/_nuxt/error-component.ce78af94.js"><link rel="stylesheet" href="/_nuxt/entry.910402ef.css"><link rel="stylesheet" href="/_nuxt/AuthorInfoPreview.6c100872.css"><link rel="stylesheet" href="/_nuxt/IconButton.ef50f21d.css"><link rel="stylesheet" href="/_nuxt/PostListing.39920b30.css"><link rel="stylesheet" href="/_nuxt/validation.092c4196.css"><style>.page-enter-active,.page-leave-active{transition:all .4s}.page-leave-to{opacity:0;transform:translateY(-32px)}.page-enter-from{opacity:0;transform:translateY(32px)}</style><style>.navbar{padding-left:20px!important;padding-right:20px!important}</style></head>
+<body ><div id="__nuxt"><!--[--><div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="z-index:1000;"><div class="v-application__wrap"><!--[--><header class="v-toolbar v-toolbar--density-default v-theme--light v-app-bar navbar" style="top:0;z-index:1004;transform:translateY(0%);position:fixed;"><!----><!--[--><div class="v-toolbar__content" style="height:64px;"><!----><!----><!--[--><div class="v-container fill-height d-flex align-center"><!--[--><a class="v-btn v-btn--active v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" style="" href="/"><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->Home<!--]--><!--]--></span><!----><!----></a><a class="v-btn v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" style="" href="/author/cptwesley"><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->About<!--]--><!--]--></span><!----><!----></a><a class="v-btn v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text" style="" href="/posts"><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->Posts<!--]--><!--]--></span><!----><!----></a><!--]--></div><!--]--><div class="v-toolbar__append"><!--[--><a href="https://github.com/CptWesley/cptwesley.github.io" rel="noopener noreferrer" class="tw-not-prose"><!--[--><img class="logo-img" width="32" height="32" src="/github.svg" title="GitHub" alt="GitHub"><!--]--></a><!--]--></div></div><!--]--><!--[--><!----><!--]--></header><main class="v-main bg-grey-lighten-3" style="--v-layout-left:0px;--v-layout-right:0px;--v-layout-top:0px;--v-layout-bottom:0px;transition:none !important;"><!--[--><!--[--><div><!--[--><!----><!----><!--]--><div class="v-container v-container--fluid item-container"><div class="v-row"><div class="flex-grow-1"></div><div class="v-col-md-6 v-col-lg-6 v-col-xl-6 v-col-12 d-flex flex-column align-center page-item-center"><div class="v-sheet v-theme--light rounded-lg tw-prose tw-prose-lg page-item prose-h1:tw-text-red-600 prose-a:tw-text-red-600 prose-a:tw-no-underline hover:prose-a:tw-underline prose-h1:tw-text-red-600 prose-h2:tw-text-red-600 prose-h3:tw-text-red-600 prose-h4:tw-text-red-600 prose-h5:tw-text-red-600 prose-h6:tw-text-red-600" style="min-height:10vh;"><!--[--><!--[--><!--[--><div><h1 id="welcome"><!--[-->Welcome<!--]--></h1><p><!--[-->Welcome to my blog! Here, I blabber on about all kinds of software engineering/development things (mostly C# and .NET). I offer up my opinionated takes on various topics. Most of my posts will focus on code quality and testing. Providing tips and tricks to write (in my opinion) cleaner and (hopefully) safer code. Feel free to take everything I say with a grain of salt, it&#39;s only my personal opinion.<!--]--></p><p><!--[-->You can read more about me by clicking <a href="/author/cptwesley" class=""><!--[-->here<!--]--></a> or go straight to the list of blog posts by clicking <a href="/posts" class=""><!--[-->here<!--]--></a>.<!--]--></p></div><!--]--><!--]--><!--]--></div></div><div class="v-col-md-3 v-col-lg-3 v-col-xl-3 v-col-12 d-flex flex-column align-center"><div class="v-sheet v-theme--light rounded-lg tw-prose tw-prose-lg page-item prose-h1:tw-text-red-600 prose-a:tw-text-red-600 prose-a:tw-no-underline hover:prose-a:tw-underline prose-h1:tw-text-red-600 prose-h2:tw-text-red-600 prose-h3:tw-text-red-600 prose-h4:tw-text-red-600 prose-h5:tw-text-red-600 prose-h6:tw-text-red-600" style="min-height:10vh;"><!--[--><!--[--><!--[--><!--[--><div class="v-container"><div class="v-row align-center justify-center"><div class="v-col d-flex flex-column align-center"><a href="/author/cptwesley" class=""><!--[--><div class="v-avatar v-theme--light bg-red v-avatar--density-default v-avatar--variant-flat tw-not-prose" style="width:128px;height:128px;"><!--[--><div class="v-responsive v-img v-img--booting" style=""><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><!----></div><!--]--><!--[--><!----><span class="v-avatar__underlay"></span><!--]--></div><!--]--></a></div></div><div class="v-row align-center justify-center"><div class="flex-grow-1"></div><!--[--><div class="v-col d-flex flex-column align-center"><a href="https://github.com/CptWesley" rel="noopener noreferrer" class="tw-not-prose"><!--[--><img class="logo-img" width="20" height="20" src="/github.svg" title="GitHub" alt="GitHub"><!--]--></a></div><div class="v-col d-flex flex-column align-center"><a href="https://www.linkedin.com/in/wesleybaartman/" rel="noopener noreferrer" class="tw-not-prose"><!--[--><img class="logo-img" width="20" height="20" src="/linkedin.svg" title="LinkedIn" alt="LinkedIn"><!--]--></a></div><div class="v-col d-flex flex-column align-center"><a href="https://www.nuget.org/profiles/CptWesley" rel="noopener noreferrer" class="tw-not-prose"><!--[--><img class="logo-img" width="20" height="20" src="/nuget.svg" title="NuGet" alt="NuGet"><!--]--></a></div><div class="v-col d-flex flex-column align-center"><a href="https://steamcommunity.com/id/cptwesley/" rel="noopener noreferrer" class="tw-not-prose"><!--[--><img class="logo-img" width="20" height="20" src="/steam.svg" title="Steam" alt="Steam"><!--]--></a></div><!--]--><div class="flex-grow-1"></div></div></div><a href="/author/cptwesley" class=""><h3 class="name">Wesley Baartman</h3></a><div class="text"><p><!--[-->Hi! My name is <em><!--[-->Wesley Baartman<!--]--></em>, also known online as <em><!--[-->CptWesley<!--]--></em>. I&#39;m a software engineer who graduated with a Master&#39;s degree in Computer Science from the Delft University of Technology in the Netherlands. I have a passion for anything related to programming language design, software quality and transfering my knowledge to others. I&#39;m a strong believer of the philosophy which can be captured by a famous quote contributed to physicist Richard Feynman: <em><!--[-->What I cannot create, I do not understand<!--]--></em>. As a consequence, one of my favourite pasttime activities is reinventing the wheel by implementing libraries that already exist in order to better understand how they actually work.<!--]--></p></div><!--]--><!--]--><!--]--><!--]--></div></div></div><div class="v-row"><div class="flex-grow-1"></div><div class="v-col-md-6 v-col-lg-6 v-col-xl-6 v-col-12 d-flex flex-column align-center page-item-center"><div class="v-sheet v-theme--light rounded-lg tw-prose tw-prose-lg page-item prose-h1:tw-text-red-600 prose-a:tw-text-red-600 prose-a:tw-no-underline hover:prose-a:tw-underline prose-h1:tw-text-red-600 prose-h2:tw-text-red-600 prose-h3:tw-text-red-600 prose-h4:tw-text-red-600 prose-h5:tw-text-red-600 prose-h6:tw-text-red-600" style="min-height:10vh;"><!--[--><!--[--><!--[--><h1>Posts</h1><div class="tw-grid tw-grid-cols-1 tw-divide-y"><!--[--><span class="tw-not-prose"><a href="/post/using-modern-csharp-features-in-older-targets" class="listing"><span>Using modern C# features in older target frameworks</span><span class="author">- Wesley Baartman</span><span class="date">3/20/2023</span></a></span><span class="tw-not-prose"><a href="/post/living-with-null-in-dotnet" class="listing"><span>Living with null in .NET</span><span class="author">- Wesley Baartman</span><span class="date">3/19/2023</span></a></span><span class="tw-not-prose"><a href="/post/welcome" class="listing"><span>Welcome</span><span class="author">- Wesley Baartman</span><span class="date">3/19/2023</span></a></span><!--]--></div><!--]--><!--]--><!--]--></div></div><div class="flex-grow-1"></div></div></div></div><!--]--><!--]--></main><!--]--></div></div><!--]--></div><script type="module">import p from "/_payload.js";window.__NUXT__={...p,...((function(a,b){return {state:{},_errors:{},serverRendered:true,config:{public:{content:{locales:[],defaultLocale:a,integrity:1707080674417,experimental:{stripQueryParameters:b,clientDB:b},api:{baseURL:"\u002Fapi\u002F_content"},navigation:{fields:[]},tags:{p:"prose-p",a:"prose-a",blockquote:"prose-blockquote","code-inline":"prose-code-inline",code:"prose-code",em:"prose-em",h1:"prose-h1",h2:"prose-h2",h3:"prose-h3",h4:"prose-h4",h5:"prose-h5",h6:"prose-h6",hr:"prose-hr",img:"prose-img",ul:"prose-ul",ol:"prose-ol",li:"prose-li",strong:"prose-strong",table:"prose-table",thead:"prose-thead",tbody:"prose-tbody",td:"prose-td",th:"prose-th",tr:"prose-tr"},highlight:{preload:["diff","json","js","ts","css","shell","html","md","yaml","csharp","java","haskell","lua","c","cpp","scala","prolog"]},wsUrl:a,documentDriven:b,host:a,trailingSlash:b,anchorLinks:{depth:4,exclude:[1]}}},app:{baseURL:"\u002F",buildAssetsDir:"\u002F_nuxt\u002F",cdnURL:a}},prerenderedAt:1707080709850}}("",false)))}</script><script type="module" src="/_nuxt/entry.563012a2.js" crossorigin></script><script type="module" src="/_nuxt/default.a9c9ec91.js" crossorigin></script><script type="module" src="/_nuxt/index.2ee34804.js" crossorigin></script><script type="module" src="/_nuxt/ContentRenderer.50b11898.js" crossorigin></script><script type="module" src="/_nuxt/ContentRendererMarkdown.fc0c475b.js" crossorigin></script><script type="module" src="/_nuxt/ProseH1.34184ede.js" crossorigin></script><script type="module" src="/_nuxt/ProseP.5cf2cc9d.js" crossorigin></script><script type="module" src="/_nuxt/ProseA.65eadb21.js" crossorigin></script><script type="module" src="/_nuxt/ProseEm.0bcde0ed.js" crossorigin></script></body>
+</html>
