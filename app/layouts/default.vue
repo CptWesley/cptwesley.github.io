@@ -1,17 +1,5 @@
 <template>
   <v-app>
-    <!--
-    <v-app-bar class="px-3" color="white" density="comfortable">
-      <template #default>
-        <v-btn v-for="link in links" :key="link.ref" :to="link.ref">
-          {{ link.name }}
-        </v-btn>
-      </template>
-      <template #append>
-        <v-icon icon="mdi-vuetify" size="large" class="float-end" />
-      </template>
-    </v-app-bar>
-  -->
     <v-app-bar class="navbar">
       <template #default>
         <v-container class="fill-height d-flex align-center">
